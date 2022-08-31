@@ -1,3 +1,15 @@
+function rgbToHex(rgb) {
+  const result = rgb.reduce((acc, curr) => {
+    const hex = Number(Math.trunc(curr)).toString(16);
+    if (hex.length < 2) {
+      return acc + "0" + hex;
+    }
+    return acc + hex;
+  }, "");
+  
+  return `#${result}`;
+}
+
 export default function colorScroll(percent, lower, upper) {
   //validation
   const lowerBound = Math.max(0, Math.min(lower, 255));
@@ -25,6 +37,5 @@ export default function colorScroll(percent, lower, upper) {
   if (i % 2 === 1)
     rgb[curr % 3] = lowerBound + (upperBound - lowerBound) * (1 - part_phase);
 
-  const [r, g, b] = rgb;
-  return `rgb(${r},${g},${b})`;
+  return rgbToHex(rgb);
 }

@@ -76,9 +76,11 @@ function App() {
 
   return (
     <div style={classes.container}>
-      <div style={{ ...classes.navbar, backgroundColor: theme.navbar }} />
-
+      <div style={{ ...classes.navbar, backgroundColor: theme.navbar }}>
+        Navbar: {theme.navbar}
+      </div>
       <div style={{ ...classes.background, backgroundColor: theme.background }}>
+        Background: {theme.background}
         <div style={{ maxWidth: "1200px" }}>
           <div style={{ ...classes.title, backgroundColor: theme.title }}>
             <div
@@ -88,12 +90,12 @@ function App() {
                 fontSize: "1.25rem",
               }}
             >
-              Some stuff
+              Page Title: {theme.title}
             </div>
           </div>
           <div style={{ ...classes.header, backgroundColor: theme.header }}>
             <div style={{ padding: "0.5rem", paddingInline: "2rem" }}>
-              Jojo Quotes
+              Section: {theme.header}
             </div>
           </div>
           <div style={{ ...classes.body, backgroundColor: theme.body }}>
@@ -108,9 +110,7 @@ function App() {
                 rowGap: "1rem",
               }}
             >
-              <div style={{ fontSize: "2rem" }}>
-                Kira Yoshikage Introduction
-              </div>
+              <div style={{ fontSize: "2rem" }}>Body: {theme.body}</div>
 
               <div
                 style={{
@@ -119,7 +119,14 @@ function App() {
                   borderLeft: `4px solid ${theme.highlight}`,
                 }}
               >
+                Section background: {theme.section}
                 <div style={{ padding: "0.5rem", color: theme.text }}>
+                  <div style={{ color: theme.highlight }}>
+                    Left border : {theme.highlight}
+                  </div>
+                  Text: {theme.text}
+                  <br />
+                  <br />
                   My name is Yoshikage Kira. I'm 33 years old. My house is in
                   the northeast section of Morioh, where all the villas are, and
                   I am not married. I work as an employee for the Kame Yu
@@ -181,18 +188,6 @@ function App() {
               >
                 <div style={{ padding: "0.5rem", color: theme.text }}>
                   ほう…向かってくるのか...逃げずにこのDIOに近づいてくるのか...せっかく祖父のジョセフがわたしの「世界」の正体を、試験終了チャイム直前まで問題を解いている受験生のような必死こいた気分で教えてくれたというのに
-                </div>
-              </div>
-
-              <div
-                style={{
-                  ...classes.section,
-                  backgroundColor: theme.section,
-                  borderLeft: `4px solid ${theme.highlight}`,
-                }}
-              >
-                <div style={{ padding: "0.5rem", color: theme.text }}>
-                  That one athletic student going for 100 laps
                 </div>
               </div>
               <div style={{ marginTop: "4rem", width: "100%" }}>
