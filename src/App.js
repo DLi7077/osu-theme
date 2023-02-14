@@ -1,6 +1,5 @@
 import { Slider } from "@mui/material";
 import { useState } from "react";
-import colorScroll from "./osuTheme";
 
 const classes = {
   container: {
@@ -56,20 +55,19 @@ function App() {
     highlight: "white",
   });
 
-  //range [0,100]
-  const [percent, setPercent] = useState(0);
+  const [hue, setHue] = useState(0);
 
-  const handleChange = (event, percent) => {
-    setPercent(percent);
+  const handleChange = (event, hue) => {
+    setHue(hue);
     const updatedColor = Object.assign(theme, {
-      navbar: colorScroll(percent, 57, 172),
-      background: colorScroll(percent, 23, 28),
-      title: colorScroll(percent, 31, 46),
-      header: colorScroll(percent, 46, 56),
-      body: colorScroll(percent, 34, 42),
-      section: colorScroll(percent, 46, 56),
-      text: colorScroll(percent, 166, 217),
-      highlight: colorScroll(percent, 102, 255),
+      navbar: `hsl(${hue},50%,45%)`,
+      background: `hsl(${hue},10%,10%)`,
+      title: `hsl(${hue},20%,15%)`,
+      header: `hsl(${hue},20%,20%)`,
+      body: `hsl(${hue},10%,15%)`,
+      section: `hsl(${hue},10%,20%)`,
+      text: `hsl(${hue},40%,90%)`,
+      highlight: `hsl(${hue},100%,70%)`,
     });
     setTheme(updatedColor);
   };
@@ -186,10 +184,10 @@ function App() {
               <div style={{ marginTop: "4rem", width: "100%" }}>
                 <Slider
                   defaultValue={0}
-                  style={{ color: colorScroll(percent, 57, 172) }}
-                  value={percent}
+                  style={{ color: `hsl(${hue},100%,70%)` }}
+                  value={hue}
                   min={0}
-                  max={100}
+                  max={360}
                   step={0.01}
                   onChange={handleChange}
                 />
