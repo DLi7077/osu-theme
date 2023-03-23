@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/osu-theme/static/css/main.4781a646.css",
-    "main.js": "/osu-theme/static/js/main.ac212d09.js",
+    "main.css": "/osu-theme/static/css/main.14b361c4.css",
+    "main.js": "/osu-theme/static/js/main.f1c422e5.js",
     "index.html": "/osu-theme/index.html",
-    "main.4781a646.css.map": "/osu-theme/static/css/main.4781a646.css.map",
-    "main.ac212d09.js.map": "/osu-theme/static/js/main.ac212d09.js.map"
+    "main.14b361c4.css.map": "/osu-theme/static/css/main.14b361c4.css.map",
+    "main.f1c422e5.js.map": "/osu-theme/static/js/main.f1c422e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.4781a646.css",
-    "static/js/main.ac212d09.js"
+    "static/css/main.14b361c4.css",
+    "static/js/main.f1c422e5.js"
   ]
 }
