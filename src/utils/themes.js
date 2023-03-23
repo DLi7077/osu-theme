@@ -10,12 +10,12 @@ export const darkMode = (hue) => ({
 });
 
 export const lightMode = (hue) => ({
-  //   navbar: `hsl(${hue},50%,55%)`,
-  //   background: `hsl(${hue},10%,80%)`,
-  //   title: `hsl(${hue},20%,75%)`,
-  //   header: `hsl(${hue},20%,70%)`,
-  //   body: `hsl(${hue},10%,75%)`,
-  //   section: `hsl(${hue},10%,70%)`,
-  //   text: `hsl(${hue},40%,20%)`,
-  //   highlight: `hsl(${hue},100%,30%)`,
+  navbar: `hsl(${hue},60%,45%)`,
+  background: `hsl(${hue},10%,90%)`,
+  title: `hsl(${hue},80%,70%)`,
+  header: `hsl(${hue},60%,60%)`,
+  body: `hsl(${hue},10%,80%)`,
+  section: `hsl(${hue},10%,90%)`,
+  text: `hsl(${hue},100%,5%)`,
+  highlight: `hsl(${hue},80%,40%)`,
 });

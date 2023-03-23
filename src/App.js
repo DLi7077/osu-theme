@@ -1,6 +1,7 @@
 import { Slider } from "@mui/material";
-import { useState } from "react";
-import { darkMode } from "./utils/themes";
+import { useEffect, useState } from "react";
+import { darkMode, lightMode } from "./utils/themes";
+import ModeSwitch from "./components/ModeSwitch";
 
 const classes = {
   container: {
@@ -47,18 +48,38 @@ const classes = {
 
 function App() {
   const [theme, setTheme] = useState(darkMode(0));
+  const [isDarkMode, setDarkMode] = useState(true);
   const [hue, setHue] = useState(0);
 
   const handleChange = (event, hue) => {
     setHue(hue);
-    const updatedColor = { ...theme, ...darkMode(hue) };
+    const updatedColor = {
+      ...theme,
+      ...(isDarkMode ? darkMode(hue) : lightMode(hue)),
+    };
     setTheme(updatedColor);
   };
 
+  useEffect(() => {
+    const updatedColor = {
+      ...theme,
+      ...(isDarkMode ? darkMode(hue) : lightMode(hue)),
+    };
+    setTheme(updatedColor);
+  }, [isDarkMode]);
   return (
-    <div style={classes.container}>
+    <div
+      style={{ ...classes.container, color: isDarkMode ? "white" : "black" }}
+    >
       <div style={{ ...classes.navbar, backgroundColor: theme.navbar }}>
-        Navbar: {theme.navbar}
+        <div style={{ color: "white" }}>Navbar: {theme.navbar}</div>
+        <ModeSwitch
+          backgroundColor={theme.header}
+          isDarkMode={isDarkMode}
+          onChange={() => {
+            setDarkMode(!isDarkMode);
+          }}
+        />
       </div>
       <div style={{ ...classes.background, backgroundColor: theme.background }}>
         Background: {theme.background}
@@ -76,7 +97,7 @@ function App() {
           </div>
           <div style={{ ...classes.header, backgroundColor: theme.header }}>
             <div style={{ padding: "0.5rem", paddingInline: "2rem" }}>
-              Section: {theme.header}
+              Header: {theme.header}
             </div>
           </div>
           <div style={{ ...classes.body, backgroundColor: theme.body }}>
@@ -165,7 +186,7 @@ function App() {
               <div style={{ marginTop: "4rem", width: "100%" }}>
                 <Slider
                   defaultValue={0}
-                  style={{ color: `hsl(${hue},100%,70%)` }}
+                  style={{ color: theme.highlight }}
                   value={hue}
                   min={0}
                   max={360}
